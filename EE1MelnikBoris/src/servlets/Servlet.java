@@ -1,8 +1,8 @@
 /*
  * Melnik Boris 21/01/2018
- * Робив на основі своєї роботи по Клієнт-Сервісним Застосуванням
- * IDE - єкліпс оксіджен з WebTools плагіном, який дозволяє відразу запускати сервлет на сервері
- * В мене все праціє прекрасно, прикладую до гіт-репозиторія скріншоти!*/
+ * ГђГ®ГЎГЁГў Г­Г  Г®Г±Г­Г®ГўВі Г±ГўГ®ВєВї Г°Г®ГЎГ®ГІГЁ ГЇГ® ГЉГ«ВіВєГ­ГІ-Г‘ГҐГ°ГўВіГ±Г­ГЁГ¬ Г‡Г Г±ГІГ®Г±ГіГўГ Г­Г­ГїГ¬
+ * IDE - ВєГЄГ«ВіГЇГ± Г®ГЄГ±ВіГ¤Г¦ГҐГ­ Г§ WebTools ГЇГ«Г ГЈВіГ­Г®Г¬, ГїГЄГЁГ© Г¤Г®Г§ГўГ®Г«ГїВє ГўВіГ¤Г°Г Г§Гі Г§Г ГЇГіГ±ГЄГ ГІГЁ Г±ГҐГ°ГўГ«ГҐГІ Г­Г  Г±ГҐГ°ГўГҐГ°Ві
+ * Г‚ Г¬ГҐГ­ГҐ ГўГ±ГҐ ГЇГ°Г Г¶ВіВє ГЇГ°ГҐГЄГ°Г Г±Г­Г®, ГЇГ°ГЁГЄГ«Г Г¤ГіГѕ Г¤Г® ГЈВіГІ-Г°ГҐГЇГ®Г§ГЁГІГ®Г°ВіГї Г±ГЄГ°ВіГ­ГёГ®ГІГЁ!*/
 
 package servlets;
 
@@ -26,12 +26,11 @@ public class Servlet extends HttpServlet {
 
 			throws ServletException, IOException {
 		
-		response.setIntHeader("Refresh", 5);
 
 		try (PrintWriter out = response.getWriter()) {
 			// out.println("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n");
 			if (!authorised) {
-				out.println("<html><head><title>Login Screen</title></head><body style=\"background:#CCFFCC\"><div style=\"max-width:500px;margin:auto;\"><div style=\"color:red;text-align:center;font-size:40px;\">Login Screen.</div><br><form method=\"post\">Login:<input type=\"text\" name=\"login\"><br>Password:<input type=\"password\" name=\"pass\"><br><input type=\"submit\" value=\"Enter\"></form></div></body></html>");
+				out.println("<html><head><title>Login Screen</title></head><body style=\"background:#CCFFCC\"><div style=\"max-width:500px;margin:auto;\"><div style=\"color:red;text-align:center;font-size:40px;\">Login Screen.</div><br><form method=\"post\">Login:<input type=\"text\" name=\"login\"><br>Password:<input type=\"password\" name=\"pass\"><br><input type=\"submit\" value=\"Enter\" href=\"localhost:8080/EE1MelnikBoris/servlet\"></form></div></body></html>");
 
 				if (request.getParameter("login") != null) {
 					if ((!request.getParameter("login").equals(login))||(!request.getParameter("pass").equals(pass))) {
